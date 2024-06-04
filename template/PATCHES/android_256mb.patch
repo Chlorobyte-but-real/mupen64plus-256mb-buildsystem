@@ -1,0 +1,26 @@
+diff --git a/mupen64plus-core/upstream/src/device/cart/cart_rom.c b/mupen64plus-core/upstream/src/device/cart/cart_rom.c
+index 86657df1f..64233b754 100644
+--- a/mupen64plus-core/upstream/src/device/cart/cart_rom.c
++++ b/mupen64plus-core/upstream/src/device/cart/cart_rom.c
+@@ -32,7 +32,7 @@
+ #define __STDC_FORMAT_MACROS
+ #include <inttypes.h>
+ 
+-#define CART_ROM_ADDR_MASK UINT32_C(0x03ffffff);
++#define CART_ROM_ADDR_MASK UINT32_C(0x0fffffff);
+ 
+ 
+ void init_cart_rom(struct cart_rom* cart_rom,
+diff --git a/mupen64plus-core/upstream/src/device/memory/memory.h b/mupen64plus-core/upstream/src/device/memory/memory.h
+index fadc4494b..657f56daa 100644
+--- a/mupen64plus-core/upstream/src/device/memory/memory.h
++++ b/mupen64plus-core/upstream/src/device/memory/memory.h
+@@ -30,7 +30,7 @@
+ enum { RDRAM_16MB_SIZE = 0x1000000 };
+ enum { RDRAM_8MB_SIZE = 0x800000 };
+ enum { RDRAM_4MB_SIZE = 0x400000 };
+-enum { CART_ROM_MAX_SIZE = 0x4000000 };
++enum { CART_ROM_MAX_SIZE = 0x10000000 };
+ enum { DD_ROM_MAX_SIZE = 0x400000 };
+ 
+ typedef void (*read32fn)(void*,uint32_t,uint32_t*);
